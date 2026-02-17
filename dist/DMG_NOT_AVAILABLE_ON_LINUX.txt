@@ -1,0 +1,10 @@
+DMG packaging is macOS-only.
+
+Current host: Linux
+Requested output: /workspace/ChatGPT_Pro/dist/EggEvolutionMatch.dmg
+
+If your goal is Apple App Store (iOS) deployment, build an IPA instead:
+  npm run deploy:ios
+
+If you really need DMG, run this on macOS with Xcode tools:
+  APP_PATH=/path/to/EggEvolutionMatch.app npm run package:dmg
