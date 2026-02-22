@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Egg Evolution Match",
+    "slug": "egg-evolution-match",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.eggevolutionmatch"
+    },
+    "android": {
+      "package": "com.example.eggevolutionmatch"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

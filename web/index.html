@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Egg Evolution Match - Web</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Egg Evolution Match (Web)</h1>
+    <section class="hud">
+      <span>Stage <b id="stage">1</b></span>
+      <span>Score <b id="score">0</b></span>
+      <span>Goal <b id="goal">5000</b></span>
+      <span>⏱ <b id="time">150</b>s</span>
+    </section>
+    <p id="status" class="status">Ready</p>
+    <section id="board" class="board" aria-label="game board"></section>
+    <button id="restart">Restart</button>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

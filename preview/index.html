@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egg Evolution Match Preview</title>
+  <style>
+    body { margin:0; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0c3443; display:flex; justify-content:center; }
+    .phone { width:360px; min-height:760px; background:linear-gradient(#0c3443,#114d63); color:#fff; padding:14px; box-sizing:border-box; }
+    .title { text-align:center; font-size:26px; font-weight:700; margin:6px 0 8px; }
+    .hud { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:8px; }
+    .pill { background:#133c55; border-radius:10px; padding:4px 8px; font-size:12px; }
+    .combo { color:#ffd166; text-align:center; height:20px; margin-bottom:8px; font-weight:600; }
+    .board { border:2px solid #fff; padding:2px; background:#082734; }
+    .row { display:flex; }
+    .cell { width:18px; height:18px; margin:1px; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:10px; }
+    .egg-r{background:#f94144}.egg-b{background:#277da1}.egg-g{background:#43aa8b}.egg-y{background:#f9c74f}.egg-p{background:#9d4edd}
+    .chick{background:#ffd166}.rooster{background:#ef476f}.hen{background:#f78c6b}
+    .btn { margin:12px auto 0; width:120px; text-align:center; background:#f9c74f; color:#2c2c2c; font-weight:700; border-radius:10px; padding:9px 0; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="title">Egg Evolution Match</div>
+    <div class="hud">
+      <div class="pill">Stage 1</div><div class="pill">Score 1260</div><div class="pill">Goal 5000</div><div class="pill">⏱ 92s</div>
+    </div>
+    <div class="combo">3 Combo!</div>
+    <div id="board" class="board"></div>
+    <div class="btn">Restart</div>
+  </div>
+  <script>
+    const board = document.getElementById('board');
+    const types = ['egg-r','egg-b','egg-g','egg-y','egg-p'];
+    for(let r=0;r<16;r++){
+      const row=document.createElement('div'); row.className='row';
+      for(let c=0;c<16;c++){
+        const cell=document.createElement('div');
+        const rnd=Math.random();
+        if(rnd<0.06){cell.className='cell rooster'; cell.textContent='🐓';}
+        else if(rnd<0.12){cell.className='cell hen'; cell.textContent='🐔';}
+        else if(rnd<0.2){cell.className='cell chick'; cell.textContent='🐥';}
+        else {cell.className='cell '+types[Math.floor(Math.random()*types.length)]; cell.textContent='🥚';}
+        row.appendChild(cell);
+      }
+      board.appendChild(row);
+    }
+  </script>
+</body>
+</html>

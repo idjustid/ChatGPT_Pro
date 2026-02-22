@@ -1,0 +1,15 @@
+EAS CLI is not installed in this environment.
+
+Install:
+  npm install -g eas-cli
+
+Then run:
+  npm run deploy:ios
+
+Strict mode (fail if EAS missing):
+  FAIL_ON_MISSING_EAS=1 npm run deploy:ios
+
+Reference flow:
+  eas login
+  eas build --platform ios --profile production --non-interactive
+  eas submit --platform ios --non-interactive
